@@ -5,14 +5,16 @@ export default class acountList extends LightningElement {
     @track Error;
     @api greeting;
     @track AccId;
-
+    @track Audio;
     @wire(fetchAccount)
     wiredData({ error, data }) {
         if (data) {
             this.Accounts = data;
+            this.AccId = data;
         }
         if (error) {
             this.Error = error;
+            this.Audio = data;
         }
     }
 
