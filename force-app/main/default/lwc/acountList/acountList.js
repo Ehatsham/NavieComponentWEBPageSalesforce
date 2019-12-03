@@ -4,6 +4,7 @@ export default class acountList extends LightningElement {
     @track Accounts;
     @track Error;
     @api greeting;
+    @track AccId;
     @wire(fetchAccount)
     wiredData({ error, data }) {
         if (data) {
