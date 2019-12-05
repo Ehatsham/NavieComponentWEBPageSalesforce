@@ -2,6 +2,7 @@ import { LightningElement, track, wire, api } from 'lwc';
 import fetchAccount from '@salesforce/apex/homeOrgClass.fetchAccount';
 export default class acountList extends LightningElement {
     @track Accounts;
+    @api AccountInfo;
     @track Error;
     @api greeting;
     @track AccId;
@@ -16,6 +17,18 @@ export default class acountList extends LightningElement {
             this.Error = error;
             this.Audio = data;
         }
+    }
+
+    showContact(event) {
+        event.preventDefault();
+        this.AccId = event.target.key;
+        console.log(this.AccId);
+        const specificAccInfo = new CustomEvent('spfAccInfo', {
+            AccountId: this.AccId,
+
+        });
+        this.dispatchEvent(specificAccInfo);
+        alert('Ehatsham Ahamed');
     }
 
 }
