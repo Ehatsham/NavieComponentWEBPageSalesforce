@@ -1,6 +1,9 @@
 <template>
+     
+   <c-account-list oninfo={contactHandler} ></c-account-list>
+   
 
-    <lightning-card icon-name="standard:Contact">
+<template if:true={selectEvent}>
     <lightning-layout  vertical-align="center">
         <lightning-layout-item title="Related Contacts"></lightning-layout-item>
         <template for:each={contacts} for:item="contact" for:index="number">
@@ -8,9 +11,11 @@
             <lightning-formatted-text value={contact.name}></lightning-formatted-text>
             <lightning-formatted-text value={contact.phone}></lightning-formatted-text>
             <lightning-formatted-text value={contact.address}></lightning-formatted-text>
+        
         </lightning-layout-item>
     
         </template>
 </lightning-layout>
 </lightning-card>
+</template>
 </template>
