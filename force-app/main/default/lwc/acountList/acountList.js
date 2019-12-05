@@ -32,13 +32,13 @@ export default class acountList extends LightningElement {
         alert("value of the current Account is -->" + this.AccId);
         console.log('current id value ' + currentId);
         // console.log('value of current tuple ' + this.AccId);
-        const specificAccInfo = new CustomEvent('spfAccInfo', {
+        const specificAccInfo = new CustomEvent('info', {
             AccountId: this.AccId,
             AccountName: dataValue.Name,
             AccountIndustry: dataValue.Industry
         });
         this.dispatchEvent(specificAccInfo);
-
+        alert(specificAccInfo);
     }
 
 }
