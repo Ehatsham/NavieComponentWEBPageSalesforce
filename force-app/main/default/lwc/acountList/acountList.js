@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 import { LightningElement, track, wire, api } from 'lwc';
 import fetchAccount from '@salesforce/apex/homeOrgClass.fetchAccount';
 export default class acountList extends LightningElement {
@@ -22,13 +24,21 @@ export default class acountList extends LightningElement {
     showContact(event) {
         event.preventDefault();
         this.AccId = event.target.key;
-        console.log(this.AccId);
+        const currentId = this.AccId;
+        // eslint-disable-next-line no-unused-vars
+        const dataValue = event.target.id;
+        alert("dataValue is " + dataValue);
+        //  this.AccId = document.getElementById('');
+        alert("value of the current Account is -->" + this.AccId);
+        console.log('current id value ' + currentId);
+        // console.log('value of current tuple ' + this.AccId);
         const specificAccInfo = new CustomEvent('spfAccInfo', {
             AccountId: this.AccId,
-
+            AccountName: dataValue.Name,
+            AccountIndustry: dataValue.Industry
         });
         this.dispatchEvent(specificAccInfo);
-        alert('Ehatsham Ahamed');
+
     }
 
 }
