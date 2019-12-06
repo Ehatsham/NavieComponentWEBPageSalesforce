@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="accountList">
     <apiVersion>47.0</apiVersion>
     <isExposed>true</isExposed>
-    <master:label>Contact info</master:label>
-
     <targets>
     <target>lightning__AppPage</target>
     <target>lightning__HomePage</target>
@@ -14,6 +12,20 @@
     <target>lightning__Inbox</target>
     <target>lightningCommunity__Page</target>
     <target>lightningCommunity__Default</target>
-    <target>lightningSnapin__ChatMessage</target>-->
+    <target>lightningSnapin__ChatMessage</target> -->
     </targets>
+    <targetConfigs>
+         
+    <targetConfig targets="lightning__RecordPage" >
+            <property name="greeting" type="String" />
+<objects>
+        <object>
+                Account
+            </object>
+            <object>Opportunity </object>
+        
+</objects>
+        
+    </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
