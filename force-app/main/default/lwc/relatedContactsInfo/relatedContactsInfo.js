@@ -6,8 +6,11 @@ export default class relatedContactsInfo extends LightningElement {
     @track accIdInfo;
     @track contacts;
     @track error;
+    @track keyValue;
     //this.selectEvent=false;
-
+    constructor() {
+        this.keyValue = "eventFirst";
+    }
     contactHandler(event) {
         this.selectEvent = true;
         this.accIdInfo = event.AccountId;
@@ -22,6 +25,8 @@ export default class relatedContactsInfo extends LightningElement {
             this.error = error;
         }
     }
+
+
 
 
 }

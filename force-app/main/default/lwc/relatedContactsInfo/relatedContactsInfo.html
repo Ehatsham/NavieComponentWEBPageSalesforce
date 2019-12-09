@@ -1,12 +1,12 @@
 <template>
      
-   <!--<c-account-list oninfo={contactHandler} account={AccountInfo} ></c-account-list>-->
-   
+   <c-accountList key={keyValue} oninfo={contactHandler} account={AccountInfo} ></c-accountList>
+    
 
 <template if:true={selectEvent}>
     <lightning-card icon-name="standard:contact">
     <lightning-layout  vertical-align="center">
-        <lightning-layout-item title="Related Contacts"></lightning-layout-item>
+        
         <template for:each={contacts} for:item="contact" for:index="number">
             <lightning-layout-item key={contact.id} padding="around-small">
             <lightning-formatted-text value={contact.name}></lightning-formatted-text>
