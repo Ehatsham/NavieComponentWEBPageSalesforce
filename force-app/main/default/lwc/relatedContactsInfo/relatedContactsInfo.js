@@ -1,5 +1,6 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import fetchContacts from '@salesforce/apex/homeOrgClass.fetchContacts';
+
 export default class relatedContactsInfo extends LightningElement {
     @api AccountInfo;
     @track selectId;
@@ -9,6 +10,7 @@ export default class relatedContactsInfo extends LightningElement {
     @track keyValue;
     //this.selectEvent=false;
     constructor() {
+        super();
         this.keyValue = "eventFirst";
     }
     contactHandler(event) {
