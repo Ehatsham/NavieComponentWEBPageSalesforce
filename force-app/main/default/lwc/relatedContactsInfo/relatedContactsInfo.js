@@ -2,16 +2,19 @@ import { LightningElement, api, track, wire } from 'lwc';
 import fetchContacts from '@salesforce/apex/homeOrgClass.fetchContacts';
 
 export default class relatedContactsInfo extends LightningElement {
+    constructor() {
+        super();
+        alert("related contact tem[plate is operated ");
+    }
     @api AccountInfo;
     @track selectId;
     @track accIdInfo;
     @track contacts;
     @track error;
     @track keyValue;
-    //this.selectEvent=false;
-    constructor() {
-        super();
-        this.keyValue = "eventFirst";
+    //this.selectEvent=false;  
+    connectedCallback() {
+        this.keyValue = "first event";
     }
     contactHandler(event) {
         this.selectEvent = true;
