@@ -23,13 +23,14 @@ export default class acountList extends LightningElement {
 
     showContact(event) {
         event.preventDefault();
-        this.AccId = event.target.key;
+        /*this.AccId = event.target.key;*/
         const currentId = this.AccId;
         // eslint-disable-next-line no-unused-vars
         const dataValue = event.target.id;
         alert("dataValue is " + dataValue);
         //  this.AccId = document.getElementById('');
         alert("value of the current Account is -->" + this.AccId);
+        alert("value trough event as Target key-->" + event.key);
         console.log('current id value ' + currentId);
         // console.log('value of current tuple ' + this.AccId);
         const specificAccInfo = new CustomEvent('info', {
